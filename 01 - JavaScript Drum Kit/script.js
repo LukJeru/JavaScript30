@@ -15,33 +15,38 @@ document.addEventListener("keydown", function(event) {
   const key = event.key.toUpperCase();
   switch(key) {
     case "A":
-      clap.classList.add("playing");
+      addAndRemove(clap);
       break;
     case "S":
-      hihat.classList.add("playing");
+      addAndRemove(hihat);
       break;
     case "D":
-      kick.classList.add("playing");
+      addAndRemove(kick);
       break;
     case "F":
-      openhat.classList.add("playing");
+      addAndRemove(openhat);
       break;
     case "G":
-      boom.classList.add("playing");
+      addAndRemove(boom);
       break;
     case "H":
-      ride.classList.add("playing");
+      addAndRemove(ride);
       break;
     case "J":
-      snare.classList.add("playing");
+      addAndRemove(snare);
       break;
     case "K":
-      tom.classList.add("playing");
+      addAndRemove(tom);
       break;
     case "L":
-      tink.classList.add("playing");
+      addAndRemove(tink);
       break;
     default:
       break;
   }
 })
+
+function addAndRemove(instrument) {
+  instrument.classList.add("playing");
+  setTimeout(() => instrument.classList.remove("playing"), 700);
+}
