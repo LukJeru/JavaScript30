@@ -66,5 +66,3 @@ function addAndRemove(instrument) {
 function playSound(index) {
   soundArray[index].play();
 }
-
-const clapSound = document.getElementById("clapSound");
