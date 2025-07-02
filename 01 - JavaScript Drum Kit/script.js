@@ -62,5 +62,6 @@ and plays corresponding sound file*/
 function playSound(index) {
   keysArray[index].classList.add("playing");
   setTimeout(() => keysArray[index].classList.remove("playing"), 70);
+  soundArray[index].currentTime = 0; //rewind playing audio file to the start
   soundArray[index].play();
 }
