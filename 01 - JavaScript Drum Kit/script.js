@@ -57,6 +57,8 @@ document.addEventListener("keydown", function(event) {
   }
 })
 
+/*Adds playing class to corresponding key, removes it after 0.07 seconds and
+and plays corresponding sound file*/
 function playSound(index) {
   keysArray[index].classList.add("playing");
   setTimeout(() => keysArray[index].classList.remove("playing"), 70);
