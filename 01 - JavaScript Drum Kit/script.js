@@ -1,6 +1,9 @@
+//use querySelectorAll to get every element of class key
 const keys = document.querySelectorAll(".key");
+//turn node list from querySelectorAll into an array
 let keysArray = Array.from(keys);
 
+//unnecessary, individual keys can be targeted by index
 const clap = keysArray[0];
 const hihat = keysArray[1];
 const kick = keysArray[2];
@@ -11,11 +14,16 @@ const snare = keysArray[6];
 const tom = keysArray[7];
 const tink = keysArray[8];
 
+//get node list of all elements of soundFile class and save it to soundFiles
 const soundFiles = document.querySelectorAll(".soundFile");
+//turn nodeList into array
 let soundArray = Array.from(soundFiles);
 
+//addEventListener for keydown event
 document.addEventListener("keydown", function(event) {
+  //check which key is pressed and save it to key
   const key = event.key.toUpperCase();
+  //switch case to determine which key should be appended with class playing
   switch(key) {
     case "A":
       addAndRemove(clap);
@@ -58,11 +66,13 @@ document.addEventListener("keydown", function(event) {
   }
 })
 
+//add class playing and remove it afer 0.07 seconds
 function addAndRemove(instrument) {
   instrument.classList.add("playing");
   setTimeout(() => instrument.classList.remove("playing"), 70);
 }
 
+//play correspondend soundFile to touched key
 function playSound(index) {
   soundArray[index].play();
 }
