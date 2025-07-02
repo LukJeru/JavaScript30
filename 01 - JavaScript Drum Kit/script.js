@@ -18,39 +18,30 @@ document.addEventListener("keydown", function(event) {
   const key = event.key.toUpperCase();
   switch(key) {
     case "A":
-      addAndRemove(clap);
       playSound(0);
       break;
     case "S":
-      addAndRemove(hihat);
       playSound(1);
       break;
     case "D":
-      addAndRemove(kick);
       playSound(2);
       break;
     case "F":
-      addAndRemove(openhat);
       playSound(3);
       break;
     case "G":
-      addAndRemove(boom);
       playSound(4);
       break;
     case "H":
-      addAndRemove(ride);
       playSound(5);
       break;
     case "J":
-      addAndRemove(snare);
       playSound(6);
       break;
     case "K":
-      addAndRemove(tom);
       playSound(7);
       break;
     case "L":
-      addAndRemove(tink);
       playSound(8);
       break;
     default:
@@ -58,11 +49,8 @@ document.addEventListener("keydown", function(event) {
   }
 })
 
-function addAndRemove(instrument) {
-  instrument.classList.add("playing");
-  setTimeout(() => instrument.classList.remove("playing"), 70);
-}
-
 function playSound(index) {
+  keysArray[index].classList.add("playing");
+  setTimeout(() => keysArray[index].classList.remove("playing"), 70);
   soundArray[index].play();
 }
