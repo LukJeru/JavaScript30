@@ -1,8 +1,4 @@
-//get current date and declare variables for each time element with global scope
-let currentDate = new Date();
-let hours = currentDate.getHours();
-let minutes = currentDate.getMinutes();
-let seconds = currentDate.getSeconds();
+
 
 //select hands
 const hourHand = document.querySelector('.hour-hand');
@@ -20,6 +16,11 @@ minuteHand.style.transform = "rotate(90deg)";
 secondHand.style.transform = "rotate(90deg)";
 
 function showTime() {
+  //get current date and declare variables for each time element
+  let currentDate = new Date();
+  let hours = currentDate.getHours();
+  let minutes = currentDate.getMinutes();
+  let seconds = currentDate.getSeconds();
   //set hands on current time
   hourHand.style.transform = buildRotationString(hourDegree, hours);
   minuteHand.style.transform = buildRotationString(minuteDegree, minutes);
@@ -30,4 +31,4 @@ function buildRotationString(degree, number) {
   return `rotate(${degree * number}deg)`;
 }
 
-showTime();
+setInterval(showTime, 1000);
